@@ -2,13 +2,21 @@
 
 using Algorithms;
 
-int[] testArray = new int[] { 3, 41, 52, 26, 38, 57, 9, 49 };
+Console.WriteLine("Testprogramm für AlgoDat\n");
 
-MergeSort ms = new MergeSort();
+Console.WriteLine("BubbleSort:");
 
-var result = ms.Sort(testArray);
+var test = new[] { 35, 22, 10, 51, 48 };
 
-foreach (var i in result)
+BubbleSort bubble = new BubbleSort();
+
+PrintArray(bubble.Sort(test));
+
+void PrintArray(int[] input)
 {
-    Console.Write($"{i} ");
+    for (int i = 0; i < input.Length - 1; i++)
+    {
+        Console.Write($"{input[i]} ");
+    }
+    Console.WriteLine(input[^1]);
 }
