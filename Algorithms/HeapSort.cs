@@ -46,12 +46,15 @@ namespace Algorithms
         /// <param name="array">The array that needs to be sorted.</param>
         /// <param name="index">The root element of the heap.</param>
         /// <param name="heapSize">The size of the heap after the root.</param>
-        private void MaxHeapify(int[] array, int index, int heapSize)
+        public void MaxHeapify(int[] array, int index, int heapSize)
         {
             // Get the left and right indices
             int left = 2 * index + 1;
             int right = 2 * index + 2;
             int largest = index;
+            
+            // Uncomment this to print the array for each step
+            //Helper.PrintArray(array);
 
             // Check left for largest element
             if (left < heapSize && array[left] > array[largest])
@@ -64,12 +67,12 @@ namespace Algorithms
             {
                 largest = right;
             }
-
+            
             if (largest != index)
             {
                 // Swap the values at index and largest positions
                 (array[index], array[largest]) = (array[largest], array[index]);
-
+                
                 // Recursively keep building the heap
                 MaxHeapify(array, largest, heapSize);
             }
