@@ -6,11 +6,13 @@ Console.WriteLine("Testprogramm für AlgoDat\n");
 
 Console.WriteLine("BubbleSort:");
 
-var test = new[] { 35, 22, 10, 51, 48 };
+var test = new[] { 55, 25, 89, 34, 12, 19, 78, 95, 1, 100 };
 
-BubbleSort bubble = new BubbleSort();
+HeapSort heap = new HeapSort();
 
-PrintArray(bubble.Sort(test));
+heap.Sort(test);
+
+PrintArray(test);
 
 void PrintArray(int[] input)
 {
