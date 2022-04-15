@@ -16,14 +16,17 @@ namespace Algorithms
         {
             // Convert the input array to a heap
             BuildMaxHeap(input);
+            Helper.PrintArray(input);
 
-            for (int i = input.Length - 1; i >= 0; i--)
+            for (int i = input.Length - 1; i > 0; i--)
             {
                 // Switch A[i] with A[1]
                 (input[i], input[0]) = (input[0], input[i]);
 
                 // Build the max heap
                 MaxHeapify(input, 0, i);
+
+                Helper.PrintArray(input);
             }
         }
 
@@ -31,12 +34,15 @@ namespace Algorithms
         /// Converts a given array into a heap
         /// </summary>
         /// <param name="array">The array that needs to be converted.</param>
-        private void BuildMaxHeap(int[] array)
+        public void BuildMaxHeap(int[] array)
         {
             // Call MaxHeapify() for all non-leaf elements of the array/heap
             for (var i = array.Length / 2 - 1; i >= 0; i--)
             {
                 MaxHeapify(array, i, array.Length);
+                
+                // Uncomment to show steps to build max heap
+                //Helper.PrintArray(array);
             }
         }
 

@@ -4,12 +4,11 @@ using Algorithms;
 
 Console.WriteLine("Testprogramm für AlgoDat\n");
 
-Console.WriteLine("BubbleSort:");
+Console.WriteLine("Sorting:");
 
-var test = new[] { 27, 17, 3, 16, 13, 10, 1, 5, 7, 12, 4, 8, 9, 0 };
+var test = new[] { 13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11 };
 
-HeapSort heap = new HeapSort();
 
-//heap.Sort(test);
+QuickSort.Sort(test,0,test.Length-1);
 
-heap.MaxHeapify(test, 2, test.Length);
+Helper.PrintArray(test);
